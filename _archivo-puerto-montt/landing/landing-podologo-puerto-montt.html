@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podólogo Puerto Montt | Clínica Podológica Particular | Marcela Valdés</title>
+  <meta name="description" content="Podólogo en Puerto Montt — clínica podológica particular, atención a domicilio, sin Fonasa ni Isapre. Población 22 de Mayo, Mirasol, La Vara y Puerto Varas. Agenda por WhatsApp hoy. Marcela Valdés.">
+  <link rel="stylesheet" href="landing.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GDW5FVZQ0X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GDW5FVZQ0X');
+    gtag('config', 'AW-18375287323');
+  </script>
+
+  <style>
+    /* Zone pills */
+    .zones-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2rem;
+    }
+    .zone-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--white);
+      border: 1.5px solid var(--teal-mid);
+      color: var(--teal-dark);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: var(--transition);
+    }
+    .zone-pill:hover {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+    .zone-pill svg { flex-shrink: 0; }
+
+    /* Services list */
+    .services-compact {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media(max-width:600px){ .services-compact { grid-template-columns: 1fr; } }
+
+    .service-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      transition: var(--transition);
+    }
+    .service-pill:hover {
+      border-color: var(--teal-mid);
+      box-shadow: var(--shadow-xs);
+      transform: translateX(4px);
+    }
+    .service-pill__icon {
+      width: 38px;
+      height: 38px;
+      background: var(--teal-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .service-pill__text strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      margin-bottom: 1px;
+    }
+    .service-pill__text span {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* Pricing section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media(max-width: 900px){ .pricing-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width: 560px){ .pricing-grid { grid-template-columns: 1fr; } }
+
+    .price-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .price-card:hover {
+      border-color: var(--teal);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-5px);
+    }
+    .price-card__badge {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+    .price-card__badge--domicilio {
+      background: #F7EEDA;
+      color: var(--accent);
+    }
+    .price-card__icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    .price-card__name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-top: 4px;
+    }
+    .price-card__desc {
+      font-size: 0.86rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .price-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .price-card__price {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      color: var(--teal-deep);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .price-card__price small {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-family: var(--font-body);
+      font-weight: 400;
+      display: block;
+      margin-top: 2px;
+    }
+    .price-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #25D366;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .price-card__cta:hover {
+      background: #20b858;
+      transform: scale(1.03);
+    }
+    .pricing-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    .pricing-note a {
+      color: var(--teal-dark);
+      font-weight: 600;
+    }
+
+    /* Domicilio highlight */
+    .domicilio-card {
+      background: linear-gradient(135deg, var(--teal-deep), #16314E);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 52px 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .domicilio-card::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(16, 49, 78, 0.2), transparent 70%);
+    }
+    .domicilio-card h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .domicilio-card p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+    @media(max-width:760px){
+      .domicilio-card {
+        grid-template-columns: 1fr;
+        padding: 36px 28px;
+      }
+    }
+  </style>
+
+<link rel="shortcut icon" href="/assets/logo.webp" type="image/x-icon">
+
+<style id="premium-clinico">
+/* ============================================================
+   PREMIUM CLÍNICO — rediseño visual fuerte (inline, anti-caché).
+   No altera la estructura semántica: solo estilos.
+   ============================================================ */
+:root{
+  --teal:#0E2A45; --teal-dark:#0A2036; --teal-deep:#081A2C;
+  --teal-light:#ECF2F8; --teal-mid:#CAD7E4;
+  --accent:#C2A05A; --accent-2:#9C7C39; --accent-soft:#F4ECDB;
+  --text-dark:#16222E; --text-mid:#54626E; --text-light:#8A98A4;
+  --white:#FFFFFF; --off-white:#F6F1E8; --cream:#FBF8F2;
+  --line:#E7DFCE; --border:rgba(14,42,69,0.12);
+  --shadow-xs:0 2px 10px rgba(14,42,69,.06);
+  --shadow-sm:0 8px 24px rgba(14,42,69,.08);
+  --shadow-md:0 18px 44px rgba(14,42,69,.12);
+  --shadow-lg:0 34px 80px rgba(14,42,69,.18);
+}
+body{ background:var(--cream); color:var(--text-dark); }
+.container{ max-width:1160px; }
+
+/* ---------- NAV ---------- */
+.nav{ background:rgba(9,28,48,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(194,160,90,.30); padding:10px 0; }
+.nav__brand{ color:#fff; gap:13px; }
+.nav__brand span{ color:var(--accent); }
+.nav__logo-img{ height:48px; width:auto; display:block; filter:drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+.nav__cta{ background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:0 8px 22px rgba(194,160,90,.32); border-radius:8px; color:#16110a; }
+.nav__cta:hover{ box-shadow:0 12px 30px rgba(194,160,90,.45); transform:translateY(-2px); }
+
+/* ---------- HERO ---------- */
+.hero{ min-height:94vh; }
+.hero__left{
+  background:
+    radial-gradient(130% 90% at 12% 10%, rgba(194,160,90,.16) 0%, transparent 42%),
+    radial-gradient(120% 120% at 90% 100%, rgba(13,40,66,.65) 0%, transparent 55%),
+    linear-gradient(150deg,#0E2A45 0%, #0A2036 55%, #06161F 100%);
+  padding:96px 60px 96px 6vw;
+}
+.hero__left::before{ background:radial-gradient(circle, rgba(194,160,90,.22) 0%, transparent 70%); }
+.hero__left::after{ background:radial-gradient(circle, rgba(202,215,228,.10) 0%, transparent 70%); }
+.hero__eyebrow{
+  background:transparent; color:var(--accent); padding:0;
+  letter-spacing:.24em; font-size:.74rem;
+}
+.hero__eyebrow::before{ display:block; width:34px; height:2px; background:var(--accent); }
+.hero__h1{
+  font-size:clamp(2.8rem,5vw,4.6rem); line-height:1.03; letter-spacing:-.015em;
+  font-weight:400; margin-bottom:1.6rem;
+}
+.hero__h1 em{ color:var(--accent); }
+.hero__sub{ color:rgba(255,255,255,.82); font-size:1.08rem; max-width:30rem; }
+.hero__actions{ gap:16px; }
+.btn-wa{ background:linear-gradient(135deg,#1FB155,#0E8C43); border-radius:10px; box-shadow:0 12px 30px rgba(20,160,80,.32); padding:17px 34px; }
+.btn-outline{ border:1.5px solid rgba(194,160,90,.7); color:#fff; border-radius:10px; }
+.btn-outline:hover{ background:rgba(194,160,90,.14); border-color:var(--accent); }
+.hero__trust{ gap:24px; margin-top:2.6rem; padding-top:1.8rem; border-top:1px solid rgba(255,255,255,.12); }
+.hero__trust-badge{ color:rgba(255,255,255,.72); }
+.hero__trust-badge svg{ color:var(--accent); }
+@media(min-width:861px){
+  /* video a la IZQUIERDA, texto a la derecha */
+  .hero__right{
+    order:1; display:flex; align-items:center; justify-content:center; overflow:hidden;
+    padding:40px;
+    background:
+      radial-gradient(120% 110% at 50% 25%, rgba(194,160,90,.16) 0%, transparent 60%),
+      linear-gradient(160deg,#0A2036 0%, #06161F 100%);
+  }
+  .hero__left{ order:2; padding:96px 6vw 96px 56px; }
+  .hero__right::before{
+    content:""; position:absolute; width:clamp(390px,41vw,600px); height:clamp(390px,41vw,600px);
+    border:2px dashed rgba(194,160,90,.40); border-radius:50%; pointer-events:none;
+  }
+  .hero__right::after{
+    content:""; position:absolute; width:clamp(356px,37vw,556px); height:clamp(356px,37vw,556px);
+    border-radius:50%; box-shadow:0 0 0 14px rgba(255,255,255,.04); pointer-events:none;
+  }
+  .hero__video-wrap{
+    position:relative; inset:auto;
+    width:clamp(338px,35vw,528px); height:clamp(338px,35vw,528px);
+    border-radius:50%; overflow:hidden;
+    box-shadow:inset 0 0 0 2px rgba(194,160,90,.7), 0 34px 80px rgba(0,0,0,.55);
+  }
+  .hero__video-wrap video,.hero__video-wrap > div{ border-radius:50%; }
+}
+
+/* ---------- STATS STRIP ---------- */
+.stats-strip{ background:linear-gradient(90deg,var(--teal-deep),var(--teal)); border-top:2px solid var(--accent); }
+.stat-item{ border-right:1px solid rgba(255,255,255,.1); }
+.stat-item__num{ font-family:var(--font-display); color:var(--accent); font-size:2.4rem; }
+.stat-item__label{ color:rgba(255,255,255,.6); letter-spacing:.12em; }
+
+/* ---------- SECTIONS ---------- */
+.section{ padding:108px 0; }
+.bg-white{ background:#fff; }
+.bg-light{ background:var(--off-white); position:relative; }
+.bg-light::before{ content:""; position:absolute; top:0; left:50%; transform:translateX(-50%); width:min(1160px,92%); height:1px; background:linear-gradient(90deg,transparent,var(--accent),transparent); opacity:.6; }
+.section-header{ margin-bottom:60px; }
+.section-eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  background:transparent; color:var(--accent-2); padding:0;
+  font-size:.74rem; letter-spacing:.22em; font-weight:700; text-transform:uppercase;
+}
+.section-eyebrow::before{ content:""; display:inline-block; width:26px; height:2px; background:var(--accent); }
+.section-header--center .section-eyebrow{ justify-content:center; }
+.section-h2{ font-size:clamp(2rem,3.7vw,3.1rem); line-height:1.08; color:var(--text-dark); position:relative; padding-bottom:20px; }
+.section-h2 em{ color:var(--accent-2); font-style:italic; }
+.section-h2::after{ content:""; position:absolute; left:0; bottom:0; width:70px; height:3px; border-radius:2px; background:linear-gradient(90deg,var(--accent),transparent); }
+.section-header--center .section-h2::after{ left:50%; transform:translateX(-50%); background:var(--accent); width:56px; }
+.section-lead{ color:var(--text-mid); font-size:1.06rem; line-height:1.8; }
+
+/* ---------- FEATURE / VP CARDS ---------- */
+.feature-card,.vp-card{
+  background:#fff; border:1px solid var(--line); border-radius:18px;
+  padding:40px 32px; box-shadow:var(--shadow-xs);
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  position:relative; overflow:hidden;
+}
+.feature-card::before{ height:4px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); transform:scaleX(1); }
+.feature-card:hover,.vp-card:hover{ transform:translateY(-10px); box-shadow:var(--shadow-md); border-color:var(--accent); }
+.feature-icon{
+  width:60px; height:60px; border-radius:16px;
+  background:linear-gradient(140deg,var(--accent),var(--accent-2)); color:#fff;
+  box-shadow:0 10px 24px rgba(194,160,90,.3); transform:rotate(-7deg);
+}
+.feature-icon>*{ display:inline-block; transform:rotate(7deg); }
+.feature-card h3,.vp-card h3{ font-family:var(--font-display); color:var(--text-dark); }
+
+/* ---------- BENEFIT LIST ---------- */
+.benefit-check{ background:linear-gradient(140deg,var(--accent),var(--accent-2)); border-radius:9px; box-shadow:0 6px 16px rgba(194,160,90,.3); }
+
+/* ---------- SPLIT VISUAL ---------- */
+.split{ position:relative; gap:64px; }
+.split__visual{ border-radius:24px 24px 24px 6px; box-shadow:var(--shadow-lg); }
+.split__visual::before{ content:""; position:absolute; inset:-12px; z-index:-1; border:2px solid rgba(194,160,90,.4); border-radius:30px 30px 30px 10px; }
+
+/* ---------- PROCESS / STFonasa ni Isapre ---------- */
+.process-steps::before{ background:linear-gradient(90deg,var(--accent),rgba(194,160,90,0)); }
+.process-step__num,.step__num{
+  background:linear-gradient(140deg,var(--accent),var(--accent-2)) !important;
+  color:#fff !important; box-shadow:0 10px 24px rgba(194,160,90,.32);
+}
+
+/* ---------- PRICING ---------- */
+.price-card{
+  background:#fff; border:1px solid var(--line); border-radius:20px;
+  box-shadow:var(--shadow-xs); transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  overflow:hidden;
+}
+.price-card:hover{ transform:translateY(-10px); box-shadow:var(--shadow-md); border-color:var(--accent); }
+.price-card__badge{ background:var(--accent); color:#16110a; border-radius:50px; letter-spacing:.06em; }
+.price-card__badge--domicilio{ background:var(--teal); color:#fff; }
+.price-card__icon{ color:var(--accent-2); }
+.price-card__name{ font-family:var(--font-display); }
+.price-card__price{ color:var(--teal); }
+.price-card__cta{ border-radius:10px; }
+.pricing-grid .price-card:first-child{ background:linear-gradient(160deg,#0E2A45,#0A2036); border-color:var(--accent); }
+.pricing-grid .price-card:first-child *{ color:#fff !important; }
+.pricing-grid .price-card:first-child .price-card__desc{ color:rgba(255,255,255,.82) !important; }
+.pricing-grid .price-card:first-child .price-card__price{ color:var(--accent) !important; }
+
+/* ---------- CHIPS (zonas / servicios) ---------- */
+.zone-pill{ background:#fff; border:1px solid var(--line); color:var(--teal); border-radius:50px; box-shadow:var(--shadow-xs); }
+.zone-pill:hover{ background:var(--teal); color:#fff; border-color:var(--teal); }
+.service-pill{ background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow-xs); }
+.service-pill:hover{ border-color:var(--accent); box-shadow:var(--shadow-sm); }
+.service-pill__icon{ background:var(--accent-soft); }
+
+/* ---------- TESTIMONIALS ---------- */
+.testimonial-card{ background:var(--off-white); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow-xs); }
+.testimonial-card:hover{ box-shadow:var(--shadow-md); transform:translateY(-6px); }
+.testimonial-stars{ color:var(--accent); }
+.testimonial-avatar{ border:2px solid var(--accent); }
+
+/* ---------- CTA BAND ---------- */
+.cta-band{
+  background:
+    radial-gradient(120% 120% at 85% 0%, rgba(194,160,90,.2) 0%, transparent 50%),
+    linear-gradient(135deg,#0E2A45,#06161F);
+  clip-path:polygon(0 0,100% 5%,100% 100%,0 95%);
+}
+.cta-band__h2{ font-family:var(--font-display); }
+.cta-band em,.cta-band__h2 em{ color:var(--accent) !important; }
+
+/* ---------- FOOTER ---------- */
+.footer-lp{ background:#06161F; border-top:2px solid var(--accent); }
+.footer-lp__brand{ color:#fff; }
+.footer-lp__links a:hover{ color:var(--accent); }
+
+/* ---------- MAP ---------- */
+.map-section{ background:var(--off-white); }
+
+/* ---------- responsive safety ---------- */
+@media(max-width:860px){
+  .hero__left{ padding:64px 28px; }
+  .split{ gap:36px; }
+  .split__visual::before{ inset:-8px; }
+}
+</style>
+
+
+<style>
+/* ═══ Servicios Marcela Valdés ═══ */
+.svc-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; margin-top:34px; }
+.svc-card{ display:flex; flex-direction:column; background:#fff; border:1px solid rgba(0,0,0,.09);
+  border-radius:16px; padding:26px 24px 24px; box-shadow:0 6px 20px rgba(15,42,68,.06);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.svc-card:hover{ transform:translateY(-6px); box-shadow:0 14px 34px rgba(15,42,68,.13); border-color:#0FA3A3; }
+.svc-card__icon{ font-size:2rem; line-height:1; margin-bottom:14px; }
+.svc-card__name{ font-size:1.12rem; font-weight:700; color:#0E2A45; margin:0 0 10px; line-height:1.3; }
+.svc-card__desc{ font-size:.95rem; line-height:1.6; color:#4a5a68; margin:0 0 22px; flex:1; }
+.svc-card__cta{ display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:#25D366; color:#fff !important; font-weight:700; font-size:.95rem; text-decoration:none;
+  padding:12px 18px; border-radius:10px; transition:background .2s ease, transform .2s ease; }
+.svc-card__cta:hover{ background:#1fb857; transform:scale(1.03); }
+.svc-domicilio{ margin-top:40px; background:linear-gradient(160deg,#0E2A45,#0A2036); border-radius:18px;
+  padding:34px 30px; color:#fff; box-shadow:0 14px 34px rgba(14,42,69,.28); }
+.svc-domicilio__title{ font-size:1.45rem; font-weight:800; margin:0 0 6px; color:#fff; text-align:center; }
+.svc-domicilio__sub{ text-align:center; margin:0 0 26px; color:rgba(255,255,255,.8); font-size:.98rem; }
+.svc-domicilio__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px; }
+.svc-fee{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:14px;
+  padding:22px 20px; text-align:center; }
+.svc-fee__zone{ font-size:.95rem; font-weight:600; color:rgba(255,255,255,.9); margin:0 0 10px; line-height:1.45; }
+.svc-fee__amount{ font-size:1.85rem; font-weight:800; color:#F5C563; letter-spacing:-.02em; }
+.svc-domicilio__note{ text-align:center; margin:24px 0 0; font-size:.9rem; color:rgba(255,255,255,.72); }
+.svc-domicilio__cta{ display:block; width:fit-content; margin:20px auto 0; background:#25D366; color:#fff !important;
+  font-weight:700; text-decoration:none; padding:14px 30px; border-radius:10px; transition:background .2s ease; }
+.svc-domicilio__cta:hover{ background:#1fb857; }
+@media(max-width:560px){ .svc-domicilio{ padding:26px 20px; } .svc-fee__amount{ font-size:1.6rem; } }
+/* --- Precios en tarjetas de servicio --- */
+.svc-card__price{ font-size:1.7rem; font-weight:800; color:#0FA3A3; letter-spacing:-.02em; margin:0 0 4px; line-height:1.1; }
+.svc-card__price-note{ font-size:.83rem; font-weight:600; color:#7a8894; margin:0 0 14px; text-transform:uppercase; letter-spacing:.04em; }
+.svc-precios-nota{ margin-top:36px; background:linear-gradient(160deg,#0E2A45,#0A2036); border-radius:18px; padding:30px 28px; }
+.svc-precios-nota p{ text-align:center; margin:0; font-size:.98rem; line-height:1.65; color:rgba(255,255,255,.85); }
+.svc-precios-nota .svc-domicilio__cta{ margin-top:20px; }
+@media(max-width:560px){ .svc-precios-nota{ padding:24px 20px; } .svc-card__price{ font-size:1.5rem; } }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="https://puertomonttpodologo.dondeseria.com/" class="nav__brand">
+        <img src="/assets/logo.webp" class="nav__logo-img" alt="Marcela Valdés - Podólogo en Puerto Montt">
+
+        <div>
+          Marcela Valdés
+          <span>Podólogo Puerto Montt · Atención Particular</span>
+        </div>
+      </a>
+      <a href="https://wa.me/56977387023?text=Hola,%20busco%20un%20podólogo%20en%20Puerto Montt%20para%20agendar%20cita"
+         class="nav__cta"
+         onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.525 5.857L.057 23.858l6.168-1.45A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.742-.502-5.313-1.38l-.38-.22-3.662.862.878-3.572-.248-.394A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        <span>Agendar cita</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ══════════════════════════ -->
+<section class="hero">
+  <div class="hero__left">
+    <div class="urgency-badge">
+      <span class="urgency-dot"></span>
+      Atención particular · Sin Fonasa ni Isapre · Población 22 de Mayo · Mirasol · Norte · Puerto Varas
+    </div>
+    <p class="hero__eyebrow">Tu podólogo de confianza en Puerto Montt</p>
+    <h1 class="hero__h1">
+      La mejor <em>clínica podológica</em><br>de Puerto Montt — en tu barrio
+    </h1>
+    <p class="hero__sub">
+      Profesionales titulados que te atienden en la consulta o, si prefieres, en tu propia casa. Servicio particular en toda la ciudad: Población 22 de Mayo, Mirasol, sector La Vara y también Puerto Varas. Reserva tu hora para hoy mismo.
+    </p>
+    <div class="hero__actions">
+      <a href="https://wa.me/56977387023?text=Hola,%20quiero%20agendar%20una%20cita%20con%20podólogo%20en%20Puerto Montt"
+         class="btn-wa"
+         onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.525 5.857L.057 23.858l6.168-1.45A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.742-.502-5.313-1.38l-.38-.22-3.662.862.878-3.572-.248-.394A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Agendar cita hoy
+      </a>
+      <a href="#servicios-lista" class="btn-outline">
+        Ver servicios
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero__trust">
+      <div class="hero__trust-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+        Médico podólogo
+      </div>
+      <div class="hero__trust-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+        A domicilio
+      </div>
+      <div class="hero__trust-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+        Misma semana
+      </div>
+    </div>
+    <!-- Zonas -->
+    <div class="zones-grid">
+      <span class="zone-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        Población 22 de Mayo
+      </span>
+      <span class="zone-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        Mirasol
+      </span>
+      <span class="zone-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        Norte
+      </span>
+      <span class="zone-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        Puerto Varas
+      </span>
+      <span class="zone-pill">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        A domicilio
+      </span>
+    </div>
+  </div>
+  <div class="hero__right">
+    <div class="hero__video-wrap" id="videoWrap1">
+      <!-- ✏️ REEMPLAZA la ruta del video aquí: cambia /assets/Video1.mp4 por la ruta real de tu video -->
+      <video id="heroVideo1" autoplay muted loop playsinline
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1;"
+             oncanplay="document.getElementById('videoOverlay1').style.opacity='0'"
+             onerror="document.getElementById('videoOverlay1').style.opacity='1'">
+        <source src="/assets/Video1.mp4" type="video/mp4">
+      </video>
+      <!-- Poster visible siempre hasta que el video cargue -->
+      <div id="videoOverlay1" style="
+        position:absolute;inset:0;z-index:2;
+        background-image:url('/assets/portada1.webp');
+        background-size:cover;background-position:center;
+        display:flex;align-items:center;justify-content:center;
+        transition:opacity 0.6s ease;
+      ">
+        <div style="
+          width:72px;height:72px;border-radius:50%;
+          background:rgba(16, 49, 78, 0.9);
+          display:flex;align-items:center;justify-content:center;
+          box-shadow:0 8px 32px rgba(0,0,0,0.3);
+          cursor:pointer;transition:transform 0.2s;
+        " onclick="playHeroVideo('heroVideo1','videoOverlay1')"
+           onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style="margin-left:4px"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-strip__inner">
+      <div class="stat-item">
+        <div class="stat-item__num">3.6K</div>
+        <div class="stat-item__label">Búsquedas mensuales</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__num">+5</div>
+        <div class="stat-item__label">Zonas de cobertura</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__num">0</div>
+        <div class="stat-item__label">Trámites de Fonasa ni Isapre</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__num">1ª</div>
+        <div class="stat-item__label">Consulta orientativa</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ SERVICIOS Y PRECIOS ═════════════════════ -->
+<section class="section bg-light" id="servicios-lista">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-eyebrow">Servicios y precios</span>
+      <h2 class="section-h2">Nuestros servicios y <em>sus valores</em></h2>
+      <p class="section-lead">Precios claros y conversados antes de empezar: usted sabe exactamente cuánto va a pagar. Escríbanos por WhatsApp, cuéntenos qué le pasa y coordinamos su hora.</p>
+    </div>
+
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="svc-card__icon">🩹</div>
+        <h3 class="svc-card__name">Uñas encarnadas (Onicocriptosis)</h3>
+        <div class="svc-card__price">$ 31.250</div>
+        <p class="svc-card__price-note">Atención dentro de Puerto Montt</p>
+        <p class="svc-card__desc">Retiramos la espícula que quedó clavada en la piel, limpiamos el canal ungueal y realizamos la curación para que el dolor ceda desde la primera atención.</p>
+        <a href="https://wa.me/56977387023?text=Hola%20Marcela%2C%20quiero%20agendar%20el%20servicio%20de%20U%C3%B1as%20encarnadas%20%28Onicocriptosis%29%20en%20Puerto%20Montt." class="svc-card__cta" onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">Agendar por WhatsApp</a>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card__icon">🦶</div>
+        <h3 class="svc-card__name">Pie diabético</h3>
+        <div class="svc-card__price">$ 37.500</div>
+        <p class="svc-card__price-note">Atención clínica especializada</p>
+        <p class="svc-card__desc">Evaluación y tratamiento del pie diabético con protocolo de bioseguridad: descarga de hiperqueratosis, curación de lesiones y educación para el cuidado diario.</p>
+        <a href="https://wa.me/56977387023?text=Hola%20Marcela%2C%20quiero%20agendar%20el%20servicio%20de%20Pie%20diab%C3%A9tico%20en%20Puerto%20Montt." class="svc-card__cta" onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">Agendar por WhatsApp</a>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card__icon">🧫</div>
+        <h3 class="svc-card__name">Tratamiento de hongos (Onicomicosis)</h3>
+        <div class="svc-card__price">$ 43.750</div>
+        <p class="svc-card__price-note">Valor por terapia</p>
+        <p class="svc-card__desc">Fresado del tejido dañado y aplicación de protocolo antifúngico, con controles hasta que la uña vuelva a crecer sana.</p>
+        <a href="https://wa.me/56977387023?text=Hola%20Marcela%2C%20quiero%20agendar%20el%20servicio%20de%20Tratamiento%20de%20hongos%20%28Onicomicosis%29%20en%20Puerto%20Montt." class="svc-card__cta" onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">Agendar por WhatsApp</a>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card__icon">⚕️</div>
+        <h3 class="svc-card__name">Matricectomía química y definitiva</h3>
+        <div class="svc-card__price">$ 43.750</div>
+        <p class="svc-card__price-note">Eliminación total de raíz o de espículas</p>
+        <p class="svc-card__desc">Matricectomía química para eliminar la raíz completa o las espículas, y matricectomía definitiva mediante cauterización de la raíz, para que la uña encarnada no vuelva a aparecer.</p>
+        <a href="https://wa.me/56977387023?text=Hola%20Marcela%2C%20quiero%20agendar%20el%20servicio%20de%20Matricectom%C3%ADa%20qu%C3%ADmica%20y%20definitiva%20en%20Puerto%20Montt." class="svc-card__cta" onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">Agendar por WhatsApp</a>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card__icon">⚡</div>
+        <h3 class="svc-card__name">Eliminación de acrocordones</h3>
+        <div class="svc-card__price">$ 43.750</div>
+        <p class="svc-card__price-note">Con electrocauterio</p>
+        <p class="svc-card__desc">Eliminación definitiva de acrocordones (verrugas colgantes) con electrocauterio, en un procedimiento breve y con instrumental esterilizado.</p>
+        <a href="https://wa.me/56977387023?text=Hola%20Marcela%2C%20quiero%20agendar%20el%20servicio%20de%20Eliminaci%C3%B3n%20de%20acrocordones%20en%20Puerto%20Montt." class="svc-card__cta" onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">Agendar por WhatsApp</a>
+      </div>
+
+    </div>
+
+    <div class="svc-precios-nota">
+      <p>Los valores indicados corresponden a la atención dentro de Puerto Montt. Si necesita más de un tratamiento en la misma sesión, se lo cotizamos en conjunto y se lo informamos antes de comenzar, sin sorpresas.</p>
+      <a href="https://wa.me/56977387023?text=Hola%20Marcela%2C%20quiero%20agendar%20el%20servicio%20de%20una%20atenci%C3%B3n%20podol%C3%B3gica%20en%20Puerto%20Montt." class="svc-domicilio__cta" onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">Consultar mi caso por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════ SERVICIOS ══════════════════════════ -->
+<section class="section bg-white" id="servicios">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-eyebrow">Podología en Puerto Montt</span>
+      <h2 class="section-h2">Todo lo que un <em>podólogo en Puerto Montt</em> puede hacer por ti</h2>
+      <p class="section-lead">Cubrimos desde la higiene básica del pie hasta tratamientos de mayor complejidad, y atendemos tanto en la consulta como a domicilio en cualquier sector de Puerto Montt.</p>
+    </div>
+    <div class="services-compact">
+      <div class="service-pill">
+        <div class="service-pill__icon">🦶</div>
+        <div class="service-pill__text">
+          <strong>Podología general</strong>
+          <span>Cuidado, corte y limpieza profesional</span>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-pill__icon">✂️</div>
+        <div class="service-pill__text">
+          <strong>Uñas encarnadas</strong>
+          <span>Tratamiento y cirugía especializada</span>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-pill__icon">🔬</div>
+        <div class="service-pill__text">
+          <strong>Hongos en uñas</strong>
+          <span>Diagnóstico y tratamiento antifúngico</span>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-pill__icon">💉</div>
+        <div class="service-pill__text">
+          <strong>Pie diabético</strong>
+          <span>Cuidado especializado y preventivo</span>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-pill__icon">🩺</div>
+        <div class="service-pill__text">
+          <strong>Callos y durezas</strong>
+          <span>Extracción y tratamiento de fondo</span>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-pill__icon">🏠</div>
+        <div class="service-pill__text">
+          <strong>Podología a domicilio</strong>
+          <span>En tu casa, por toda Puerto Montt</span>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-pill__icon">⚡</div>
+        <div class="service-pill__text">
+          <strong>Verruga plantar</strong>
+          <span>Tratamiento con técnica especializada</span>
+        </div>
+      </div>
+      <div class="service-pill">
+        <div class="service-pill__icon">👶</div>
+        <div class="service-pill__text">
+          <strong>Podología pediátrica</strong>
+          <span>Atención especializada en niños</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ══════════════════════ DOMICILIO EXTRA ════════════════════ -->
+<section class="section-sm bg-light">
+  <div class="container">
+    <div class="domicilio-card">
+      <div>
+        <h3>¿Buscas podólogo<br>a domicilio en Puerto Montt?</h3>
+        <p>Trasladamos la atención completa hasta el lugar que tú elijas. Llegamos a Población 22 de Mayo, Mirasol, La Vara y Puerto Varas y demás sectores de la ciudad, manteniendo idénticos protocolos de bioseguridad y la misma calidad profesional.</p>
+        <a href="https://wa.me/56977387023?text=Hola,%20necesito%20un%20podólogo%20a%20domicilio%20en%20Puerto Montt"
+           class="btn-wa"
+           onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.525 5.857L.057 23.858l6.168-1.45A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.742-.502-5.313-1.38l-.38-.22-3.662.862.878-3.572-.248-.394A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Consultar disponibilidad
+        </a>
+      </div>
+      <div style="text-align:center;font-size:5rem;opacity:0.6;position:relative;z-index:1;">🏠</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ WHY US ══════════════════════════ -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="split split--reverse">
+      <div class="split__visual">
+        <img
+          src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80"
+          alt="Clínica podológica Puerto Montt Marcela Valdés"
+          loading="lazy"
+        >
+      </div>
+      <div>
+        <div class="section-header">
+          <span class="section-eyebrow">Por qué elegir Marcela Valdés</span>
+          <h2 class="section-h2">Tu salud podal merece atención <em>de verdad</em></h2>
+          <p class="section-lead">No somos el plan B para cuando Fonasa o la Isapre te deja botado. Somos la primera opción de quienes buscan un cuidado real y profesional de sus pies.</p>
+        </div>
+        <div class="benefit-list">
+          <div class="benefit-item">
+            <div class="benefit-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <p><strong>Médico podólogo en Puerto Montt</strong> — profesionales con título verificable y formación específica en patologías del pie, no una pedicura estética.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <p><strong>Centros de podología en Puerto Montt</strong> con instrumental clínico, esterilización certificada y protocolos de bioseguridad aplicados sin excepciones.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <p><strong>Podólogo a domicilio en Puerto Montt</strong> — llevamos la atención completa hasta tu casa en sectores como Población 22 de Mayo, Mirasol, Alerce y Puerto Varas.</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <p><strong>Clínica podológica Puerto Montt sin Fonasa ni Isapre</strong> — atención particular el mismo día que agendas, sin papeleos, sin filas y sin esperas de más.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TESTIMONIOS ════════════════════════ -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-eyebrow">Pacientes reales</span>
+      <h2 class="section-h2">Puertomontinos que <em>ya confían</em> en Marcela Valdés</h2>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>Encontré a Marcela Valdés buscando podólogo en Puerto Montt Población 22 de Mayo y fue una decisión acertadísima. Puntualidad, higiene impecable y un trato profesional para mis callosidades.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JV</div>
+          <div>
+            <div class="testimonial-author-name">Jorge V.</div>
+            <div class="testimonial-author-meta">Población 22 de Mayo · Podología general</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>Pedí el servicio a domicilio porque no podía moverme con facilidad. La podóloga llegó puntual y con todo el equipo esterilizado. La comodidad y la atención superaron mis expectativas.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MH</div>
+          <div>
+            <div class="testimonial-author-name">Martha H.</div>
+            <div class="testimonial-author-meta">Mirasol · Podología a domicilio</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>Llevaba meses sufriendo con hongos en las uñas. En dos sesiones cerca de Puerto Varas obtuve un diagnóstico claro y un plan de tratamiento que sí funcionó. Hoy ya no lidio con el problema.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RP</div>
+          <div>
+            <div class="testimonial-author-name">Ricardo P.</div>
+            <div class="testimonial-author-meta">Alerce · Tratamiento hongos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FAQ ═══════════════════════════ -->
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-eyebrow">Dudas frecuentes</span>
+      <h2 class="section-h2">Lo que más nos <em>preguntan</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Atienden en Población 22 de Mayo, Mirasol y otras zonas de Puerto Montt?
+          <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-answer">Por supuesto. Atendemos en consultorio y también ofrecemos visita domiciliaria en distintos sectores de Puerto Montt, entre ellos Población 22 de Mayo, Mirasol, Alerce, Puerto Varas y otros barrios cercanos. Escríbenos por WhatsApp para validar la cobertura exacta en tu zona.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cuánto cuesta la consulta con el podólogo?
+          <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-answer">El valor depende del servicio y del tipo de procedimiento que necesites. Cuéntanos tu caso por WhatsApp y te indicamos el precio exacto sin compromiso. La asesoría inicial no tiene costo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Necesito remisión médica para ser atendido?
+          <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-answer">No es necesario. Al ser una consulta particular, agendas directamente sin remisiones, autorizaciones ni gestiones con tu Fonasa ni Isapre o caja de compensación.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Atienden pacientes diabéticos?
+          <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-answer">Sí, manejamos un protocolo dedicado para pacientes con diabetes. El cuidado del pie diabético exige una atención preventiva y especializada que ofrecemos con la formación y el instrumental adecuados.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          ¿Cuánto tiempo dura una consulta de podología?
+          <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-answer">Una consulta general suele durar entre 30 y 60 minutos según el tratamiento aplicado. Los procedimientos más específicos pueden tomar más tiempo y te lo informamos al momento de reservar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA BAND ══════════════════════════ -->
+<section class="cta-band">
+  <div class="container">
+    <h2 class="cta-band__h2">El mejor <em style="font-style:italic;color:var(--teal);">podólogo en Puerto Montt</em><br>está a un mensaje de distancia</h2>
+    <p class="cta-band__sub">Nada de filas, de trámites con Fonasa o Isapre, ni de largas esperas. Tenemos horas disponibles esta misma semana en Población 22 de Mayo, Mirasol, Alerce, Puerto Varas y en toda la ciudad.</p>
+    <div class="cta-band__actions">
+      <a href="https://wa.me/56977387023?text=Hola,%20quiero%20agendar%20cita%20con%20podólogo%20en%20Puerto Montt"
+         class="btn-wa"
+         onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.525 5.857L.057 23.858l6.168-1.45A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.742-.502-5.313-1.38l-.38-.22-3.662.862.878-3.572-.248-.394A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Hablar con un podólogo ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MAPA ══════════════════════════════ -->
+<section class="map-section">
+  <div class="container">
+    <div class="section-header section-header--center" style="margin-bottom:40px;">
+      <span class="section-eyebrow">Encuéntranos</span>
+      <h2 class="section-h2">Marcela Valdés en <em>Puerto Montt</em></h2>
+    </div>
+    <div class="map-grid">
+      <div class="map-embed">
+        <iframe src="https://maps.google.com/maps?q=Calle%20Urriola%20901%2C%20Poblaci%C3%B3n%2022%20de%20Mayo%2C%20Puerto%20Montt%2C%20Chile&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="map-info">
+        <h3>Centro de Podología<br><em style="font-style:italic;color:var(--teal-dark);">Marcela Valdés</em></h3>
+        <div class="map-detail">
+          <div class="map-detail__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <div class="map-detail__text">
+            <p>Consulta principal</p>
+            <strong>Calle Urriola 901, Población 22 de Mayo<br>Puerto Montt, Región de Los Lagos</strong>
+          </div>
+        </div>
+        <div class="map-detail">
+          <div class="map-detail__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="map-detail__text">
+            <p>Horarios de atención</p>
+            <strong>Lunes a Sábado<br>Confirma horarios por WhatsApp</strong>
+          </div>
+        </div>
+        <div class="map-detail">
+          <div class="map-detail__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          </div>
+          <div class="map-detail__text">
+            <p>Agenda ahora</p>
+            <strong><a href="https://wa.me/56977387023" onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})" style="color:var(--teal-dark);">+56 9 7738 7023</a></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ FOOTER ══════════════════════════ -->
+<footer class="footer-lp">
+  <div class="container">
+    <div class="footer-lp__inner">
+      <div class="footer-lp__brand">
+        Marcela Valdés
+        <span>Centro de Podología · Puerto Montt, Chile</span>
+      </div>
+      <div class="footer-lp__links">
+        <a href="https://puertomonttpodologo.dondeseria.com/">Sitio principal</a>
+        <a href="landing-unas-encarnadas.html">Uñas Encarnadas</a>
+        <a href="https://wa.me/56977387023" onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-lp__bottom">
+      <p>© 2026 Marcela Valdés. Centro de Podología en Puerto Montt. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════ WHATSAPP FLOTANTE ════════════════════ -->
+<a href="https://wa.me/56977387023?text=Hola,%20busco%20podólogo%20en%20Puerto Montt"
+   class="wa-float"
+   title="Hablar con un podólogo"
+   onclick="gtag('event','conversion',{'send_to':'AW-18375287323/FK-bCJGsqd0cEJvEgrpE'})">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.525 5.857L.057 23.858l6.168-1.45A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.742-.502-5.313-1.38l-.38-.22-3.662.862.878-3.572-.248-.394A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script>
+  function playHeroVideo(videoId, overlayId) {
+    var v = document.getElementById(videoId);
+    var o = document.getElementById(overlayId);
+    if (v) {
+      v.play().then(function(){ o.style.opacity = '0'; setTimeout(function(){ o.style.pointerEvents='none'; }, 600); })
+       .catch(function(){ o.style.opacity = '1'; });
+    }
+  }
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

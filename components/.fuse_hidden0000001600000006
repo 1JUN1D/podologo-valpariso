@@ -1,0 +1,47 @@
+<!-- /components/navbar.html -->
+<!DOCTYPE html>
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="logo.jpeg" alt="DALIA OSORIO - Podólogo en Medellín">
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="clinica-medellin.html">Clínica</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="una-encarnada-medellin.html">Uña Encarnada</a></li>
+                        <li><a href="pedicure-clinico-medellin.html">Pedicure Clínico</a></li>
+                        <li><a href="tratamiento-pie-diabetico-medellin.html">Pie Diabético</a></li>
+                        <li><a href="curaciones-especializadas-medellin.html">Curaciones</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="spa-medico-medellin.html">Spa Médico</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tratamiento-hongos-callos-medellin.html">Hongos y Callos</a></li>
+                        <li><a href="exfoliacion-hidratacion-medellin.html">Exfoliación e Hidratación</a></li>
+                        <li><a href="aromaterapia-medellin.html">Aromaterapia</a></li>
+                        <li><a href="spa-terapeutico-pies-medellin.html">Spa Terapéutico</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="masaje-pies-medellin.html">Masajes</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="masaje-relajante-pies-medellin.html">Masaje Relajante</a></li>
+                        <li><a href="reflexologia-podal-medellin.html">Reflexología Podal</a></li>
+                        <li><a href="masaje-descontracturante-medellin.html">Descontracturante</a></li>
+                        <li><a href="hidromasaje-relajante-medellin.html">Hidromasaje</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://wa.me/573186575390?text=Hola,%20me%20interesa%20agendar%20una%20cita%20para%20cuidado%20podológico" class="btn-contact">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,23 @@
+<!-- /components/map.html -->
+<section class="map-section">
+    <div class="container">
+        <h2 class="section-title">Encuéntranos en Belén, Medellín</h2>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31729.73042401135!2d-75.657061!3d6.2351938!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44299e87bd4859%3A0xd5fd4131e48e5657!2sPODOLOGO%20MEDELLIN%20%7C%20DALIA%20OSORIO!5e0!3m2!1ses-419!2sco!4v1777685246667!5m2!1ses-419!2sco"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa de ubicación DALIA OSORIO - Podólogo en Belén, Medellín">
+            </iframe>
+        </div>
+        <p class="map-address">
+            <strong>DALIA OSORIO - Centro de Podología en Medellín</strong><br>
+            Cl. 30d #88-14, Belén, Medellín, Antioquia<br>
+            Llegada cómoda en transporte público y zona de parqueo cercana disponible.
+        </p>
+    </div>
+</section>
